@@ -13,12 +13,12 @@ public class ReportView {
         System.out.println(DESCRIPTION + report.getName());
         System.out.println("=".repeat(dash));
 
-        System.out.println("name\t\t\t\tcount\t\t\t\tsum");
+        System.out.printf("%-20s %5s %20s %n", "name", "count", "sum");
         System.out.println("=".repeat(dash));
         for (BuyingDto buyingDto : report.getData()) {
             String cost = Math.round(buyingDto.getSum()) + " uah";
             System.out.printf("%-20s %5s %20s %n", buyingDto.getName(), buyingDto.getCount(), cost);
-          //  System.out.println(buyingDto.getName() + "\t\t\t" + buyingDto.getCount() + "\t\t\t" + cost);
+            //  System.out.println(buyingDto.getName() + "\t\t\t" + buyingDto.getCount() + "\t\t\t" + cost);
             System.out.println("-".repeat(dash));
         }
         System.out.println("=".repeat(dash));
